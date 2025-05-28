@@ -8,3 +8,4 @@ vite.config.ts.*
 .env
 *.key
 *.pem
+attached_assets
