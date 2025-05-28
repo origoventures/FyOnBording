@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Fylle brand colors */
+  --fylle-dark-blue: 230 65% 7%; /* #03071C */
+  --fylle-lime: 82 92% 70%; /* #d1f96d */
+  --fylle-sage: 75 15% 66%; /* #b2be96 */
+  --fylle-white: 220 100% 95%; /* #e9effe */
+
+  /* System colors mapped to Fylle branding */
+  --background: 0 0% 100%;
+  --foreground: 230 65% 7%;
+  --muted: 82 25% 95%;
+  --muted-foreground: 75 15% 40%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 230 65% 7%;
+  --card: 0 0% 100%;
+  --card-foreground: 230 65% 7%;
+  --border: 75 15% 90%;
+  --input: 75 15% 90%;
+  --primary: 82 92% 70%; /* Fylle lime */
+  --primary-foreground: 230 65% 7%;
+  --secondary: 75 15% 66%; /* Fylle sage */
+  --secondary-foreground: 230 65% 7%;
+  --accent: 82 92% 70%;
+  --accent-foreground: 230 65% 7%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 82 92% 70%;
+  --radius: 0.5rem;
+
+  /* Success, Warning, Error colors */
+  --success: 142 76% 36%;
+  --warning: 38 92% 50%;
+  --error: 0 84% 60%;
+}
+
+.dark {
+  --background: 230 65% 7%; /* Fylle dark blue */
+  --foreground: 220 100% 95%; /* Fylle white */
+  --muted: 230 20% 15%;
+  --muted-foreground: 75 15% 66%;
+  --popover: 230 65% 7%;
+  --popover-foreground: 220 100% 95%;
+  --card: 230 60% 10%;
+  --card-foreground: 220 100% 95%;
+  --border: 230 20% 15%;
+  --input: 230 20% 15%;
+  --primary: 82 92% 70%; /* Fylle lime */
+  --primary-foreground: 230 65% 7%;
+  --secondary: 75 15% 66%; /* Fylle sage */
+  --secondary-foreground: 220 100% 95%;
+  --accent: 82 92% 70%;
+  --accent-foreground: 230 65% 7%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 220 100% 95%;
+  --ring: 82 92% 70%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-color: #F7F7F0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  /* Fylle-styled buttons */
+  .btn-fylle-primary {
+    @apply bg-[#d1f96d] text-[#03071C] font-medium hover:brightness-105 transition-all duration-300
+      hover:shadow-md active:translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#d1f96d] focus:ring-opacity-50;
+  }
+
+  .btn-fylle-secondary {
+    @apply bg-[#03071C] text-[#d1f96d] border border-[#d1f96d] font-medium hover:bg-[#070E62]
+      transition-all duration-300 hover:shadow-md active:translate-y-0.5 focus:outline-none
+      focus:ring-2 focus:ring-[#d1f96d] focus:ring-opacity-50;
+  }
+
+  /* Card styling */
+  .card-fylle {
+    @apply bg-white rounded-lg shadow-sm border border-gray-100 transition-all duration-300
+      hover:shadow-md;
+  }
+
+  .card-fylle-dark {
+    @apply bg-[#03071C] rounded-lg shadow-sm border border-[#070E62] text-white transition-all duration-300
+      hover:shadow-[0_4px_20px_rgba(3,7,28,0.25)];
+  }
+
+  /* Typography classes */
+  .text-fylle-title {
+    @apply text-[#03071C] font-bold tracking-tight;
+  }
+
+  .text-fylle-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#b2f83b] to-[#d1f96d];
+  }
+
+  .text-fylle-accent {
+    @apply text-[#d1f96d];
+  }
+
+  .text-fylle-secondary {
+    @apply text-[#b2be96];
+  }
+
+  /* Progress bars */
+  .progress-fylle {
+    @apply h-2.5 rounded-full bg-gray-200 overflow-hidden;
+  }
+
+  .progress-fylle-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-[#b2f83b] to-[#d1f96d] transition-all duration-1000;
+  }
+
+  /* Input fields */
+  .input-fylle {
+    @apply border-gray-200 focus:border-[#d1f96d] focus:ring-1 focus:ring-[#d1f96d] rounded-lg
+      transition-all duration-300 shadow-sm focus:shadow-[0_0_0_4px_rgba(209,249,109,0.1)]
+      placeholder:text-gray-400;
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  .animate-slideIn {
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  /* Gradients */
+  .bg-fylle-gradient {
+    @apply bg-gradient-to-r from-[#b2f83b] to-[#d1f96d];
+  }
+  
+  .bg-fylle-gradient-subtle {
+    @apply bg-gradient-to-r from-[#f9fef0] to-[#eafcd1];
+  }
+  
+  /* Card effects */
+  .card-highlight {
+    @apply relative overflow-hidden;
+  }
+  
+  .card-highlight::after {
+    content: "";
+    @apply absolute top-0 -right-full w-[200%] h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-30 transition-all duration-1000 transform rotate-25;
+    animation: shimmer 3s infinite;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-150%) rotate(25deg); }
+  100% { transform: translateX(150%) rotate(25deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
